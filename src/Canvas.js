@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 class Canvas extends Component {
+
   componentDidMount(){
     var canvas = document.getElementById("canvas")
     var ctx = canvas.getContext("2d")
@@ -9,10 +10,10 @@ class Canvas extends Component {
       canvas.width = img.width
       canvas.height = img.height
       ctx.drawImage(img, 0, 0)
-      imgData = ctx.getImageData(0, 0, image.width, image.height)
-      makeGrayscale(imgData)
+      var imgData = ctx.getImageData(0, 0, img.width, img.height)
+      this.makeGrayscale(imgData)
       ctx.putImageData(imgData, 0, 0)
-      drawHorizontalLines(this.props.lines)
+      this.drawHorizontalLines(ctx, this.props.lines, img.width)
     }
     img.src = this.props.image
   }
@@ -23,16 +24,16 @@ class Canvas extends Component {
     );
   }
 
-  drawHorizontalLines(heights){
+  drawHorizontalLines(ctx, heights, width){
     for (var i = 0; i < heights.length; i++){
-      drawHorizontalLine(heights[i])
+      this.drawHorizontalLine(ctx, heights[i], width)
     }
   }
 
-  drawHorizontalLine(y){
+  drawHorizontalLine(ctx, y, width){
     ctx.beginPath()
     ctx.moveTo(0, y)
-    ctx.lineTo(imageWidth, y)
+    ctx.lineTo(width, y)
     ctx.width = 3
     ctx.stroke()
   }
