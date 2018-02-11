@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+/* <Canvas image=imageUrl lines={segment heights} */
+
 class Canvas extends Component {
 
   componentDidMount(){
