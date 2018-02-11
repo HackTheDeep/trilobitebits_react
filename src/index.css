@@ -1,5 +1,47 @@
+/* --------------------- */
+/* ---- SOFT RESET ----- */
+/* --------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #eee;
+}
+
 body {
   margin: 0;
   padding: 0;
+  max-width: 1024px;
   font-family: sans-serif;
+  margin: 0 auto;
+  background: #fff;
+  padding: .5rem;
+  height: 100vh;
+}
+
+/* --------------------- */
+/* --- UPLOAD IMAGE ---- */
+/* --------------------- */
+.upload--panel {
+  margin: 0 auto;
+  background: #eee;
+  width: 35%;
+  border-radius: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+input.choose--file {
+  margin: 0 auto;
+}
+
+.upload--image {
+  margin-top: 1rem;
+}
+
+.text--submit {
+  margin-bottom: 2rem;
 }

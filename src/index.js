@@ -1,8 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom'
+
+// All Components
+import './index.css';
+import HomePage from './components/HomePage'
+import NotFound from './components/NotFound'
+
+// App with routing added
+const App = () => (
+  <Router>
+    <Switch>
+      <Route exact path="/" component={HomePage} />
+      <Route path="*" component={NotFound} />
+    </Switch>
+  </Router>
+)
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
