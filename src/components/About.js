@@ -6,17 +6,43 @@ class About extends Component {
 
     var h1 = {
       fontSize: 40,
-      margin: 30,
       color: '#59abcf',
       textAlign: 'center',
+      marginTop: 30,
+      marginBottom: 50
     }
 
     var p1 = {
       fontSize: 16,
-      padding: 90,
+      paddingTop: 60,
+      paddingBottom: 60,
+      paddingLeft: 80,
+      paddingRight: 80,
       textAlign: 'center',
-      background: '#aaa',
-      margin: 80
+      background: '#ddd',
+      margin: 80,
+      marginTop: 50,
+      borderRadius: 20
+    }
+
+    var h2 = {
+      color: '#59abcf',
+      textAlign: 'center',
+      marginTop: 30,
+    }
+
+    var p2 = {
+      fontSize: 16,
+      paddingTop: 60,
+      paddingBottom: 60,
+      paddingLeft: 80,
+      paddingRight: 80,
+      background: '#ddd',
+      marginTop: 40,
+      marginBottom: 80,
+      marginLeft: 80,
+      marginRight: 80,
+      borderRadius: 20
     }
 
     return(
@@ -38,7 +64,17 @@ class About extends Component {
             deep analysis and questions about evolution, diversification,
             biogeography, and past ecosystems.
             </p>
-            <h2 >Findings</h2>
+
+          <h2 style = {h2}>Objectives</h2>
+
+            <p style = {p2}>Our objectives are:
+              <ul>
+                <li> To find the number of segments in the
+                thorax of each specimen </li>
+                <li> Find the lengths of the different regions </li>
+                <li> To demonstrate which segments have macro-spines </li>
+              </ul>
+            </p>
         </div>
     )
   }
