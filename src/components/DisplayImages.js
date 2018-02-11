@@ -19,6 +19,8 @@ class DisplayImages extends Component {
 
     // TODO
     // Use components to present images in cards
+
+    console.log(this.props.originalImg, this.props.lines)
     return (
       <Grid>
         <Row>
@@ -27,7 +29,9 @@ class DisplayImages extends Component {
               <Panel.Heading>
                 <Panel.Title componentClass="h3" className="text-center">Original</Panel.Title>
               </Panel.Heading>
-              <Panel.Body>Panel content</Panel.Body>
+              <Panel.Body>
+                <img src={this.props.originalImg} alt="Original image" />
+              </Panel.Body>
             </Panel>
           </Col>
 
@@ -36,7 +40,9 @@ class DisplayImages extends Component {
               <Panel.Heading>
                 <Panel.Title componentClass="h3" className="text-center">Proccessed</Panel.Title>
               </Panel.Heading>
-              <Panel.Body>Panel content</Panel.Body>
+              <Panel.Body>
+                <Canvas image={this.props.originalImg} lines={this.props.lines} />
+              </Panel.Body>
             </Panel>
           </Col>
         </Row>

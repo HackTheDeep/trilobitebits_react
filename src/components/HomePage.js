@@ -11,7 +11,9 @@ class HomePage extends Component {
     super(props)
     this.state = {
       file: '',
+      imagePreviewUrl: '',
       lines: 0,
+      ready: false,
     }
 
     this.components = {
@@ -46,14 +48,31 @@ class HomePage extends Component {
 
   // Sets the state to image uploaded
   onChange(e) {
-    this.setState({file: e.target.files[0]})
+    e.preventDefault();
+
+    let reader = new FileReader()
+    let file   = e.target.files[0]
+
+    setTimeout(() => {
+      this.setState({
+        file: file,
+        imagePreviewUrl: reader.result,
+        ready: true,
+      })
+    }, 1000)
+
+    reader.readAsDataURL(file)
   }
 
   // Will get image and send to upload
   onFormSubmit(e) {
     e.preventDefault()
 
-    this.imageUpload(this.state.file)
+    if(this.state.ready) {
+      this.imageUpload(this.state.file)
+
+      this.setState({ready: false})
+    }
   }
 
   // Uploads image to webserver
@@ -76,6 +95,8 @@ class HomePage extends Component {
   // Append component to the collection class
   // Give it components to render
   displayPanel(data) {
+    <img src={this.state.imagePreviewUrl} />
+    ReactDOM.render(<DisplayImages originalImg={this.state.imagePreviewUrl} lines={5.4} />, document.querySelector('.collection'))
   }
 }
 
