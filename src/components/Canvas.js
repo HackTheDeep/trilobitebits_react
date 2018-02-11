@@ -31,6 +31,7 @@ class Canvas extends Component {
   }
 
   drawHorizontalLines(ctx, heights, width){
+    ctx.strokeStyle = "#fff"
     for (var i = 0; i < heights.length; i++){
       this.drawHorizontalLine(ctx, heights[i], width)
     }
@@ -48,10 +49,15 @@ class Canvas extends Component {
     var pixels = imgData.data
     for (var i = 0; i < pixels.length; i+=4){
       var grayscale = pixels[i] * 0.3 + pixels[i+1] * 0.59 + pixels[i+2] * 0.11
-      pixels[i] = pixels[i+1] = pixels[i+2] = Math.pow(grayscale, 1.2)
+      pixels[i] = pixels[i+1] = pixels[i+2] = this.convertRange(grayscale, [0, 255], [50, 125])
     }
   }
 
+  convertRange( value, r1, r2 ) {
+      return ( value - r1[ 0 ] ) * ( r2[ 1 ] - r2[ 0 ] ) / ( r1[ 1 ] - r1[ 0 ] ) + r2[ 0 ];
+  }
+
 }
+
 
 export default Canvas;
