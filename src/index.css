@@ -45,3 +45,10 @@ input.choose--file {
 .text--submit {
   margin-bottom: 2rem;
 }
+
+.trilo-img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+
+}

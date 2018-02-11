@@ -11,12 +11,14 @@ import {
 import './index.css';
 import HomePage from './components/HomePage'
 import NotFound from './components/NotFound'
+import About from './components/About'
 
 // App with routing added
 const App = () => (
   <Router>
     <Switch>
       <Route exact path="/" component={HomePage} />
+      <Route path="/about" component={About} />  
       <Route path="*" component={NotFound} />
     </Switch>
   </Router>
