@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import trilo from '../trilo.jpg';
 import trilobite from '../trilobite.png';
+import NavBar from './NavBar'
 
 class About extends Component {
   render(){
@@ -48,6 +49,8 @@ class About extends Component {
 
     return(
         <div>
+          <NavBar />
+
           <h1 style = {h1}>About Trilobite Bits</h1>
 
           <img src={trilo} width="350" height="300" className="trilo-img" alt="Trilobite" />

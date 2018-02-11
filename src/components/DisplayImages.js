@@ -43,7 +43,7 @@ class DisplayImages extends Component {
                 <Canvas 
                   image={this.props.originalImg}
                   segments={this.props.lines}
-                  width={100}
+                  width={500}
                 />
               </Panel.Body>
             </Panel>
