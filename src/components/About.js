@@ -50,7 +50,7 @@ class About extends Component {
         <div>
           <h1 style = {h1}>About Trilobite Bits</h1>
 
-          <img src={trilo} width="350" height="230" className="trilo-img" alt="Trilobite" />
+          <img src={trilo} width="350" height="300" className="trilo-img" alt="Trilobite" />
 
             <p style = {p1}>Trilobites are an extinct group of arthropods.
             Although their body structure follows a similar three-lobed pattern
@@ -68,7 +68,7 @@ class About extends Component {
 
           <h2 style = {h2}>Objectives</h2>
 
-          <img src={trilobite} width="350" height="230" className="trilobite-img" alt="Trilobite" />
+          <img src={trilobite} width="380" height="280" className="trilobite-img" alt="Trilobite" />
 
             <p style = {p2}>Our objectives are:
               <ul>
