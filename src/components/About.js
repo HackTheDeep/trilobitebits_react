@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import trilo from '../trilo.jpg';
+import trilobite from '../trilobite.png';
 
 class About extends Component {
   render(){
 
     var h1 = {
-      fontSize: 40,
       color: '#59abcf',
       textAlign: 'center',
       marginTop: 30,
@@ -29,6 +29,7 @@ class About extends Component {
       color: '#59abcf',
       textAlign: 'center',
       marginTop: 30,
+      marginBottom: 50
     }
 
     var p2 = {
@@ -38,7 +39,7 @@ class About extends Component {
       paddingLeft: 80,
       paddingRight: 80,
       background: '#ddd',
-      marginTop: 40,
+      marginTop: 50,
       marginBottom: 80,
       marginLeft: 80,
       marginRight: 80,
@@ -66,6 +67,8 @@ class About extends Component {
             </p>
 
           <h2 style = {h2}>Objectives</h2>
+
+          <img src={trilobite} width="350" height="230" className="trilobite-img" alt="Trilobite" />
 
             <p style = {p2}>Our objectives are:
               <ul>
