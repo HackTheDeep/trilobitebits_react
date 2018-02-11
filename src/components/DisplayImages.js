@@ -37,7 +37,7 @@ class DisplayImages extends Component {
           <Col xs={12} md={6}>
             <Panel bsStyle="info" style={panel}>
               <Panel.Heading>
-                <Panel.Title componentClass="h3" className="text-center">Proccessed</Panel.Title>
+                <Panel.Title componentClass="h3" className="text-center">Processed</Panel.Title>
               </Panel.Heading>
               <Panel.Body>
                 <Canvas 

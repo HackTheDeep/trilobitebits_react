@@ -96,7 +96,7 @@ class HomePage extends Component {
   // Give it components to render
   displayPanel(data) {
     <img src={this.state.imagePreviewUrl} />
-    ReactDOM.render(<DisplayImages originalImg={this.state.imagePreviewUrl} lines={5.4} />, document.querySelector('.collection'))
+    ReactDOM.render(<DisplayImages originalImg={this.state.imagePreviewUrl} lines={[50, 70, 40, 20, 40, 50, 60, 100, 60, 200, 400, 120, 150, 175]} />, document.querySelector('.collection'))
   }
 }
 
