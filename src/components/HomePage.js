@@ -49,6 +49,7 @@ class HomePage extends Component {
   // Sets the state to image uploaded
   onChange(e) {
     e.preventDefault();
+    this.setState({ready: false})
 
     let reader = new FileReader()
     let file   = e.target.files[0]
@@ -95,8 +96,9 @@ class HomePage extends Component {
   // Append component to the collection class
   // Give it components to render
   displayPanel(data) {
-    <img src={this.state.imagePreviewUrl} />
-    ReactDOM.render(<DisplayImages originalImg={this.state.imagePreviewUrl} lines={[50, 70, 40, 20, 40, 50, 60, 100, 60, 200, 400, 120, 150, 175]} />, document.querySelector('.collection'))
+    ReactDOM.render(<DisplayImages originalImg={this.state.imagePreviewUrl} lines={[22,56,81,112,161,183,225,254,276,297,323,366,394]} />, document.querySelector('.collection'))
+
+    this.setState({ready: true})
   }
 }
 
