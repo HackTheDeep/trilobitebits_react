@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-/* <Canvas image=imageUrl lines={segment heights} */
+// Example:
+// <Canvas image="imageurl.jpg" segments={[1, 2, 3, 4]}  width=320 />
 
 class Canvas extends Component {
 
@@ -11,11 +12,14 @@ class Canvas extends Component {
     img.onload = () => {
       canvas.width = img.width
       canvas.height = img.height
+      var width = this.props.width || image.width
+      canvas.style.width = width
+      canvas.style.height = image.height * (width / image.width)
       ctx.drawImage(img, 0, 0)
       var imgData = ctx.getImageData(0, 0, img.width, img.height)
       this.makeGrayscale(imgData)
       ctx.putImageData(imgData, 0, 0)
-      this.drawHorizontalLines(ctx, this.props.lines, img.width)
+      this.drawHorizontalLines(ctx, this.props.segments, img.width)
     }
     img.src = this.props.image
   }
