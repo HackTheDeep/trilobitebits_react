@@ -13,7 +13,6 @@ class DisplayImages extends Component {
   render() {
     // Styles for the Display Images class
     const panel = {
-      width: '25rem',
       marginTop: '3rem',
     }
 
@@ -24,24 +23,28 @@ class DisplayImages extends Component {
     return (
       <Grid>
         <Row>
-          <Col xs={12} md={3}>
+          <Col xs={12} md={6}>
             <Panel bsStyle="success" style={panel}>
               <Panel.Heading>
                 <Panel.Title componentClass="h3" className="text-center">Original</Panel.Title>
               </Panel.Heading>
               <Panel.Body>
-                <img src={this.props.originalImg} alt="Original image" />
+                <img width='500px' src={this.props.originalImg} alt="Original image" />
               </Panel.Body>
             </Panel>
           </Col>
 
-          <Col xs={12} md={3}>
+          <Col xs={12} md={6}>
             <Panel bsStyle="info" style={panel}>
               <Panel.Heading>
                 <Panel.Title componentClass="h3" className="text-center">Proccessed</Panel.Title>
               </Panel.Heading>
               <Panel.Body>
-                <Canvas image={this.props.originalImg} lines={this.props.lines} />
+                <Canvas 
+                  image={this.props.originalImg}
+                  segments={this.props.lines}
+                  width={100}
+                />
               </Panel.Body>
             </Panel>
           </Col>
