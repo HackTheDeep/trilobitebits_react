@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+// All components for homepage
+import NavBar from './NavBar'
+
 class HomePage extends Component {
   constructor(props) {
     super(props)
@@ -15,10 +18,17 @@ class HomePage extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit}>
-        <input type="file" onChange={this.onChange}/>
-        <button type="submit">Upload</button>
-      </form>
+      <div>
+        <NavBar />
+
+        <div className="upload--panel">
+          <h3 className="text-primary text--submit">Please submit specimen</h3>
+          <form onSubmit={this.onFormSubmit}>
+            <input className="choose--file" type="file" onChange={this.onChange}/>
+            <button type="submit" className="upload--image btn btn-success">Upload</button>
+          </form>
+        </div>
+      </div>
     )
   }
 
