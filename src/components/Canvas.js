@@ -5,6 +5,15 @@ import React, { Component } from 'react';
 
 class Canvas extends Component {
 
+  constructor(props){
+    super(props)
+    this.state = {}
+  }
+
+  componentDidUpdate(){
+    this.componentDidMount()
+  }
+
   componentDidMount(){
     var canvas = document.getElementById("canvas")
     var ctx = canvas.getContext("2d")
@@ -24,6 +33,9 @@ class Canvas extends Component {
       this.adjustContrast(imgData, 0.5)
       ctx.putImageData(imgData, 0, 0)
       this.drawHorizontalLines(ctx, this.findSegments(imgData), img.width)
+      ctx.fillStyle = "#f00"
+      ctx.font = "30px Arial"
+      ctx.fillText((segments.length - 1) + " segments found", 30, 30)
     }
     img.src = this.props.image
   }
@@ -77,7 +89,6 @@ class Canvas extends Component {
 
   findSegments(imgData){
 
-    var imgData
     var data = imgData.data
     var center = imgData.width / 2
     var freqMax = imgData.height / 15

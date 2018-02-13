@@ -39,9 +39,15 @@ class HomePage extends Component {
           </form>
         </div>
 
-        <div className="collection">
-              <DisplayImages originalImg={this.state.imagePreviewUrl} lines={[22,56,81,112,161,183,225,254,276,297,323,366,394]} />
-        </div>
+        {(() => {
+          if (this.state.imagePreviewUrl && this.state.imagePreviewUrl != "") {
+            return(
+              <div className="collection">
+                  <DisplayImages originalImg={this.state.imagePreviewUrl} lines={[22,56,81,112,161,183,225,254,276,297,323,366,394]} />
+              </div>
+            )
+          }
+        })()}
       </div>
     )
   }

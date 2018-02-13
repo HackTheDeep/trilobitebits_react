@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { 
+import {
   Panel,
   Grid,
   Row,
@@ -21,7 +21,7 @@ class DisplayImages extends Component {
 
     // console.log(this.props.originalImg, this.props.lines)
 
-    
+
 
     return (
       <Grid>
@@ -32,7 +32,7 @@ class DisplayImages extends Component {
                 <Panel.Title componentClass="h3" className="text-center">Original</Panel.Title>
               </Panel.Heading>
               <Panel.Body>
-                <img width='500px' src={this.props.originalImg} alt="Original image" />
+                <img width='500px' src={this.props.originalImg} alt="" />
               </Panel.Body>
             </Panel>
           </Col>
@@ -43,7 +43,7 @@ class DisplayImages extends Component {
                 <Panel.Title componentClass="h3" className="text-center">Processed</Panel.Title>
               </Panel.Heading>
               <Panel.Body>
-                <Canvas 
+                <Canvas
                   image={this.props.originalImg}
                   width={500}
                 />
