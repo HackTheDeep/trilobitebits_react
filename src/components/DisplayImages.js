@@ -19,7 +19,10 @@ class DisplayImages extends Component {
     // TODO
     // Use components to present images in cards
 
-    console.log(this.props.originalImg, this.props.lines)
+    // console.log(this.props.originalImg, this.props.lines)
+
+    
+
     return (
       <Grid>
         <Row>
@@ -42,7 +45,6 @@ class DisplayImages extends Component {
               <Panel.Body>
                 <Canvas 
                   image={this.props.originalImg}
-                  segments={this.props.lines}
                   width={500}
                 />
               </Panel.Body>
