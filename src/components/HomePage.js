@@ -36,12 +36,18 @@ class HomePage extends Component {
           <h3 className="text-primary text--submit">Please submit specimen</h3>
           <form onSubmit={this.onFormSubmit}>
             <input className="choose--file" type="file" onChange={this.onChange}/>
-            <button type="submit" className="upload--image btn btn-success">Upload</button>
           </form>
         </div>
 
-        <div className="collection">
-        </div>
+        {(() => {
+          if (this.state.imagePreviewUrl && this.state.imagePreviewUrl != "") {
+            return(
+              <div className="collection">
+                  <DisplayImages originalImg={this.state.imagePreviewUrl} lines={[22,56,81,112,161,183,225,254,276,297,323,366,394]} />
+              </div>
+            )
+          }
+        })()}
       </div>
     )
   }
@@ -49,31 +55,32 @@ class HomePage extends Component {
   // Sets the state to image uploaded
   onChange(e) {
     e.preventDefault();
-    this.setState({ready: false})
+    // this.setState({ready: false})
 
     let reader = new FileReader()
     let file   = e.target.files[0]
-
-    setTimeout(() => {
-      this.setState({
-        file: file,
-        imagePreviewUrl: reader.result,
-        ready: true,
-      })
-    }, 1000)
-
+    // setTimeout(() => {
+      // this.setState({
+      //   file: file,
+      //   imagePreviewUrl: reader.result,
+      //   ready: true,
+      // })
+    // }, 1000)
+    reader.addEventListener("load", () => this.setState({file: file, imagePreviewUrl: reader.result, ready: true}))
     reader.readAsDataURL(file)
   }
 
   // Will get image and send to upload
   onFormSubmit(e) {
-    e.preventDefault()
+    // e.preventDefault()
 
-    if(this.state.ready) {
-      this.imageUpload(this.state.file)
+    // if(this.state.ready) {
+      // this.imageUpload(this.state.file)
+      // console.log(e.target)
+      // this.setState({ready: false})
+    // }
 
-      this.setState({ready: false})
-    }
+    // this.displayPanel()
   }
 
   // Uploads image to webserver
