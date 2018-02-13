@@ -20,7 +20,7 @@ class NavBar extends Component {
             <NavItem eventKey={1} href="#">
             Settings
             </NavItem>
-            <NavItem eventKey={2} href="#">
+            <NavItem eventKey={2} href="/about">
             About
             </NavItem>
           </Nav>
